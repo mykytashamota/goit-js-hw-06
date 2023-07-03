@@ -3,7 +3,7 @@ const input = document.querySelector("#validation-input");
 input.addEventListener("blur", validateInput);
 
 function validateInput(event) {
-  const exactLength = 6;
+  const exactLength = Number(event.currentTarget.dataset.length);
   const inputValue = event.currentTarget.value;
   const inputLength = inputValue.length;
 

@@ -13,13 +13,20 @@ const images = [
   },
 ];
 
+// const gallery = document.querySelector(".gallery");
+
+// images.forEach((image) => {
+//   const listItem = document.createElement("li");
+//   listItem.insertAdjacentHTML(
+//     "beforeend",
+//     `<img src="${image.url}" alt="${image.alt}">`
+//   );
+//   gallery.appendChild(listItem);
+// });
 const gallery = document.querySelector(".gallery");
 
-images.forEach((image) => {
-  const listItem = document.createElement("li");
-  listItem.insertAdjacentHTML(
-    "beforeend",
-    `<img src="${image.url}" alt="${image.alt}">`
-  );
-  gallery.appendChild(listItem);
-});
+const imgList = images
+  .map((image) => `<li><img src="${image.url}" alt="${image.alt}"></li>`)
+  .join(" ");
+
+gallery.insertAdjacentHTML("beforeend", imgList);
